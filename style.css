@@ -4,25 +4,24 @@
 
 #maze {
     background-color: grey;
-    width: 900px;
-    height: 700px;
+    width: 600px;
+    height: 500px;
     display: flex;
     flex-direction: column;
 }
 
 .row {
-    background-color: aqua;
-    /* border: 1px solid black; */
     flex-grow: 1;
     display: flex;
 }
 
 .block.wall {
-    background-color: blueviolet;
+    background-color: black
 }
 
 .block {
     flex-grow: 1;
+    background-color: white;
 }
 
 .block.start {
@@ -31,4 +30,14 @@
 
 .block.finish {
     background-color: red;
+}
+
+#player {
+    width: 28px;
+    height: 33px;
+    background: blueviolet;
+    border-radius: 50%;
+    position: absolute;
+    left: 200px;
+    top: 200px;
 }

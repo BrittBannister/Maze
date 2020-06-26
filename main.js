@@ -36,8 +36,10 @@ const createMaze = function(blueprint) {
                     blockDivs += '<div class = "block start"></div>'
                     y = rowNum
                     x = colNum
+                    break;
                 case 'F':
                     blockDivs += '<div class = "block finish"></div>'
+                    break;
                 default:
                     blockDivs += '<div class = "block"></div>'
             }
@@ -46,3 +48,33 @@ const createMaze = function(blueprint) {
     }
 }
 createMaze(map)
+
+document.addEventListener('keydown', logKey);
+
+
+
+let playerTop = 200;
+let playerLeft = 200;
+
+
+function logKey(evt) {
+    console.log(evt);
+    if (evt.keyCode === 38) {
+        // up arrow
+        document.getElementById('player').style.top = (playerTop - 10) + 'px';
+        playerTop -= 10 //changing the actual var. value 
+    } else
+    if (evt.keyCode === 40) {
+        // down arrow
+        document.getElementById('player').style.top = (playerTop + 10) + 'px';
+        playerTop += 10
+    } else if (evt.keyCode === 37) {
+        // left arrow
+        document.getElementById('player').style.left = (playerLeft - 20) + 'px';
+        playerLeft -= 20
+    } else if (evt.keyCode === 39) {
+        // right arrow
+        document.getElementById('player').style.left = (playerLeft + 20) + 'px';
+        playerLeft += 20
+    }
+}
