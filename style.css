@@ -1,0 +1,34 @@
+:root {
+    box-sizing: border-box;
+}
+
+#maze {
+    background-color: grey;
+    width: 900px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    background-color: aqua;
+    /* border: 1px solid black; */
+    flex-grow: 1;
+    display: flex;
+}
+
+.block.wall {
+    background-color: blueviolet;
+}
+
+.block {
+    flex-grow: 1;
+}
+
+.block.start {
+    background-color: green;
+}
+
+.block.finish {
+    background-color: red;
+}
