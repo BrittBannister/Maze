@@ -16,18 +16,23 @@ const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
 
-let x
-let y
+let y //rowNum
+let x //ColNum
+let startPos = map[9][0] //9 down, 0 across [rowNum][colNum]
+let winPos = map[8][20] //8 down, 20 across
+let currentPos
+
+
 
 const mazeEl = document.getElementById('maze')
-
+    //generates the maze
 const createMaze = function(blueprint) {
     for (let rowNum = 0; rowNum < blueprint.length; rowNum++) {
         const rowString = blueprint[rowNum]
         let blockDivs = ''
         for (let colNum = 0; colNum < rowString.length; colNum++) { //looking at the letters in rowString. 
 
-            const blockType = rowString[colNum]
+            const blockType = rowString[colNum] //accessing the letters in rowString using their index
             switch (blockType) {
                 case 'W':
                     blockDivs += '<div class = "block wall"></div>'
@@ -46,16 +51,25 @@ const createMaze = function(blueprint) {
         }
         mazeEl.innerHTML += '<div class = "row">' + blockDivs + '</div>'
     }
+    winning();
 }
 createMaze(map)
+
+
+//winning condition
+function winning() {
+    if (currentPos == winPos || currentPos === map[8][20]) {
+        console.log('you won')
+    }
+}
+
 
 document.addEventListener('keydown', logKey);
 
 
-
+//makes the players icon able to move in different directions based on pressing the arrow keys.
 let playerTop = 200;
 let playerLeft = 200;
-
 
 function logKey(evt) {
     console.log(evt);
