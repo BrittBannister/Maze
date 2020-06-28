@@ -24,16 +24,16 @@ h1 {
     display: flex;
 }
 
-.block {
-    height: 20px;
-    width: 20px;
-    background-color: white;
-}
-
 .wall {
     height: 20px;
     width: 20px;
     background-color: black;
+}
+
+.block {
+    height: 20px;
+    width: 20px;
+    background-color: white;
 }
 
 .start {
@@ -57,26 +57,21 @@ h1 {
     left: 0;
 }
 
-.win {
-    font-style: italic;
-    text-align: center;
-    font-size: 65px;
-}
 
-.msg {
+/* WAS TRYING TO GET SOMETHING ANIMATED TO RUN SAYING 'YOU MADE IT!' AFTER MAZE WAS COMPLETED WAS COULDNT FIGURE IT OUT. */
+
+
+/* #msg {
+    background-image: url(rss/img.jpg);
     color: whitesmoke;
     font-size: 50px;
     animation-name: slidein;
     animation-duration: 3s;
-}
+} */
 
-@keyframes slidein {
-    from {
-        margin-left: 100%;
-        width: 300%;
-    }
-    to {
-        margin-left: 50%;
-        width: 50%;
-    }
+.win {
+    font-family: 'Piedra', cursive;
+    text-align: center;
+    font-size: 75px;
+    color: whitesmoke;
 }
