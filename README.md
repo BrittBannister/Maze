@@ -55,3 +55,4 @@ movement...find out if current position is relative to start purpose...movement 
 4. Maybe give each cell/block an id....block00/block01/block02...etc..
 
 
+
