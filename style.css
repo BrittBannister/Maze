@@ -27,35 +27,45 @@ h1 {
 .wall {
     height: 20px;
     width: 20px;
-    background-color: black;
+    background-color: rgb(13, 26, 0);
 }
 
 .block {
     height: 20px;
     width: 20px;
-    background-color: white;
+    background-color: rgb(242, 255, 230);
 }
 
 .start {
     height: 20px;
     width: 20px;
-    background-color: green
+    background-color: rgb(25, 77, 0);
 }
 
 .finish {
     height: 20px;
     width: 20px;
-    background-color: red;
+    background-color: rgb(153, 25, 0);
 }
 
 .player {
     position: relative;
     height: 20px;
     width: 20px;
-    background-color: purple;
+    background-color: rgb(115, 0, 230);
+    border-radius: 70%;
     top: 0;
     left: 0;
 }
+
+
+/* IGNORE THIS- THIS WAS FOR MY 'TRAIL'
+.dot {
+    background-color: red;
+    position: relative;
+    height: 2px;
+    width: 2px;
+} */
 
 
 /* WAS TRYING TO GET SOMETHING ANIMATED TO RUN SAYING 'YOU MADE IT!' AFTER MAZE WAS COMPLETED WAS COULDNT FIGURE IT OUT. */

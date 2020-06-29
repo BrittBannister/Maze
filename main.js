@@ -17,10 +17,9 @@ const map = [
 ];
 
 let playerPosition = {}
-
 const container = document.querySelector('#maze')
 
-function mazeDisplay() {
+function mazeDisplay(blueprint) {
     for (let i = 0; i < map.length; i++) {
         let row = document.createElement('div')
         row.classList.add('row')
@@ -47,7 +46,11 @@ function mazeDisplay() {
         }
     }
 }
-mazeDisplay()
+mazeDisplay(map)
+
+//creating player
+//i cant get the img of my player to go to start position...creating just a block for now to use for player...border radius to make it a cirlce
+//in css so you can tell it's not jusst the starting position..
 let player = document.createElement('div')
 player.classList.add('player')
 document.getElementById('start').appendChild(player)
@@ -55,9 +58,14 @@ let playerTop = 0
 let playerLeft = 0
 let playerColumn = 0
 let playerRow = 9 //it's nine because my start position is (9,0)
+
 document.addEventListener("keydown", moveAround)
 
 function moveAround(evt) {
+    //TRYING TO LEAVE A 'TRAIL' BEHIND PLAYER...MAY HAVE TO COME BACK TO THIS...
+    // let trail = document.createElement('div')
+    // trail.classList.add('dot')
+    // playerRow.getElementById('dot').appendChild(trail)
     if (evt.code === 'ArrowUp') {
         if (map[playerRow - 1][playerColumn] !== 'W') {
             playerTop -= 20
@@ -85,12 +93,11 @@ function moveAround(evt) {
             playerColumn -= 1
         }
 
-        winner();
+        madeIt();
     }
 
-    function winner() {
-        if (map[playerRow][playerColumn] == "F") {
-            document.removeEventListener("keydown", moveAround);
+    function madeIt() {
+        if (map[playerRow][playerColumn] == 'F') {
             let winMsg = document.createElement('div')
             winMsg.classList.add('win')
             document.body.appendChild(winMsg)
